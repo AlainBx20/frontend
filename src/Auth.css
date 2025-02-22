@@ -1,0 +1,313 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;  /* Slightly warmer background */
+    color: #444;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background:linear-gradient(270deg, #30f8f8, #52bed2, #c2ccd3)
+}
+
+
+/* Title */
+#title {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    color: #333;
+    background: linear-gradient(90deg, #f0f0f0, #d9d9d9);
+    -webkit-background-clip: text;
+    text-shadow: 0px 0px 10px rgba(0, 123, 255, 0.6), 0px 0px 20px rgba(0, 123, 255, 0.4);
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #2c3e50;  /* Dark blue-gray */
+    padding-top: 20px;
+    border-right: 1px solid #ccc;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ecf0f1;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 8px;
+}
+
+.sidebar li.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.sidebar li:hover {
+    background-color: #34495e;
+    color: white;
+}
+
+.sidebar ul ul {
+    padding-left: 10px;
+    display: none; /* Hide submenus by default */
+    position: relative;
+}
+
+.sidebar li.active > ul {
+    display: block; /* Show submenu when parent is active */
+}
+
+/* Content Area */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+h2 {
+    margin: 0;
+}
+
+/* Form and Input Styling */
+#username, #password {
+    width: 320px;
+    height: 45px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 25px;
+    padding: 0 20px;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#username, #password::placeholder {
+    color: #999;
+}
+
+#username:focus, #password:focus {
+    border: 1px solid #007BFF;
+}
+
+.password-container {
+    position: relative;
+    width: 320px;  /* Same width as the password input */
+}
+
+#password {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 25px;
+    padding: 0 20px;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding-right: 40px;
+
+}
+
+.toggle-eye {
+    position: fixed;
+    right: 43%;
+    top: 53.3%;
+    transform: translateY(-50%); /* Keep it vertically centered */
+    cursor: pointer;
+    color: #007BFF;
+    transition: transform 0.3s ease; /* Optional smooth transition */
+}
+
+
+#username:hover, #password:hover {
+    background-color: #fafafa; /* Light grey hover effect */
+}
+
+/* Success Message */
+.success-message {
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 15px;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.success-message.animate {
+    opacity: 1;
+}
+
+/* Button Styling */
+#button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+#button:hover {
+    background-color: #0056b3;
+}
+
+/* Logo and Contact */
+.logo {
+    position: fixed;
+    bottom: 2%;
+    right: 5%;
+    width: 10%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contact {
+    position: fixed;
+    bottom: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    text-align: center;
+    color: #555;
+}
+
+/* Title for Authentication Page */
+.title {
+    position: fixed;
+    bottom: 75%;
+    left: 16%;
+    text-align: center;
+    font-size: 2.8rem;
+    color: #333;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Active Menu Styling */
+.sidebar li.active {
+    background-color: #3498db;  /* Active menu color */
+    box-shadow: inset 4px 0px 0px rgba(0, 123, 255, 0.6); /* Blue accent line */
+}
+
+.sidebar ul li ul li {
+    padding-left: 30px;
+    font-size: 14px;
+    color: #ecf0f1;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li ul li:hover {
+    background-color: #34495e;
+}
+
+/* Add Smooth Transition for Submenus */
+.sidebar ul li {
+    transition: transform 0.3s ease;
+}
+
+.sidebar li.active {
+    transform: translateX(10px); /* Slight shift for active item */
+}
+
+.submenu-indicator {
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.sidebar li.active .submenu-indicator {
+    transform: rotate(0deg); /* No rotation for active menu */
+}
+
+.sidebar li .submenu-indicator {
+    transform: rotate(0deg); /* Default position */
+}
+.sidebar ul ul {
+    padding-left: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.sidebar li.active > ul {
+    max-height: 500px; /* Adjust height based on submenu content */
+    transition: max-height 0.4s ease-in;
+}
+
+.xml-menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px; /* Adds spacing */
+    padding: 10px 15px;
+}
+
+.custom-file-label {
+    background-color: transparent;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: color 0.3s;
+}
+
+.custom-file-label:hover {
+    color: #0056b3;
+}
+
+/* Hide default file input */
+.hidden-file-input {
+    display: none;
+}
+.authmenu {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: #f0f0f0; /* Lighter color for better contrast */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    border-bottom: 2px solid #4a90e2; /* Subtle underline */
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.authmenu:hover {
+    color: #ffffff; /* Lighten color on hover for better readability */
+    border-color: #ffffff; /* Change border color on hover for consistency */
+}
+
+

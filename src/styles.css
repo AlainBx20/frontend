@@ -1,0 +1,281 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #fff; /* Set body background to white */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+
+
+/* Header */
+h1 {
+    font-size: 28px;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: absolute;
+    top: 20px;
+    right: 250px; /* Adjust the value as needed */
+}
+
+/* Input */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+tr.selected {
+    background-color: #d0e9ff;
+}
+
+.no-items {
+    text-align: center;
+    color: #aaa;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+/* General Button Styles */
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: none;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+button.annuler {
+    background-color: #dc3545;
+}
+
+button.annuler:hover {
+    background-color: #b02a37;
+}
+
+/* Bottom Buttons */
+.bottom-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Search Popup */
+.search-popup {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    max-width: 100%;
+    width: 250px;
+    margin: 0 auto;
+    display: none;
+}
+
+/* Search Input */
+.search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+    display: none;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Suggestions List */
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.suggestions-list li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestions-list li:hover {
+    background-color: #f1f1f1;
+}
+
+/* Spinner */
+.spinner {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* File Upload */
+.file-upload {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-file-label {
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.file-input {
+    display: none;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    table,
+    th,
+    td {
+        font-size: 14px;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .bottom-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .bottom-buttons button {
+        width: 100%;
+    }
+
+    .file-upload {
+        flex-direction: column;
+    }
+}
+
+/* Search container and input styles */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-btn {
+    display: inline-block;
+    margin-right: 10px; /* Adjust for spacing between button and input */
+}
+
+.search-input {
+    display: block; /* Show when toggled */
+}
+
+/* Show the input when the popup is visible */
+.search-container input[type="text"]:focus {
+    display: inline-block; /* Show input when focused */
+}
+
+.search-popup {
+    display: block; /* Only show popup when visible */
+}

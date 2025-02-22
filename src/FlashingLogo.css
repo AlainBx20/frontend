@@ -1,0 +1,39 @@
+.flashing-logo-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.flashing-logo-overlay.show {
+    opacity: 1;
+}
+
+.flashing-logo-overlay:not(.show) {
+    opacity: 0;
+}
+
+.flashing-logo {
+    width: 200px; /* Adjust size */
+    animation: flash 1s infinite;
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
